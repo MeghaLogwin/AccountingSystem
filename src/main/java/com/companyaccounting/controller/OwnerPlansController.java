@@ -24,7 +24,6 @@ public class OwnerPlansController {
 
     @GetMapping("/findAll")
     public List<Owner> findAllOwners(){
-
         return ownerPlanService.findAllOwners();
     }
 
