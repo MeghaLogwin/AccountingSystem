@@ -2,6 +2,7 @@ package com.companyaccounting.controller;
 
 import com.companyaccounting.dto.CompanyRequest;
 import com.companyaccounting.dto.DepartmentRequest;
+import com.companyaccounting.entity.Company;
 import com.companyaccounting.entity.Owner;
 import com.companyaccounting.service.OwnerPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,6 @@ public class OwnerPlansController {
 
     @GetMapping("/findAll")
     public List<Owner> findAllOwners(){
-
         return ownerPlanService.findAllOwners();
     }
 
@@ -41,7 +41,7 @@ public class OwnerPlansController {
     }
 
     @GetMapping("/findAllCompanies")
-    public List<Owner> findAllCompanies(){
+    public List<Company> findAllCompanies(){
         return ownerPlanService.findAllCompanies();
     }
 

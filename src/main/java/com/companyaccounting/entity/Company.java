@@ -25,6 +25,7 @@ public class Company {
     private String branchName;
     private String contactNumber;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id",referencedColumnName = "id")
     private Set<User> users;
