@@ -36,14 +36,12 @@ public class UserServiceImpl implements UserService {
         // for Saving image file
         Set<String> fileNames = fileStorageService.storeFile(imgFile,docFile);
 
-
-        //http://localhost:8080/download/abc.jpg
         fileNames.stream().forEach(fileName -> {
-            String contentType = null;
+           /* String contentType = null;
             String url= ServletUriComponentsBuilder.fromCurrentContextPath()
                     .path("/download")
                     .path(fileName)
-                    .toUriString();
+                    .toUriString();*/
 
             if(fileName.endsWith(".jpg") || fileName.endsWith(".png")) {
 //                contentType = imgFile.getContentType();
@@ -59,7 +57,7 @@ public class UserServiceImpl implements UserService {
                 String docname = response.getFileName();
                 dto.setDocument(docname);
             }
-            if(!fileName.endsWith(".jpg")|| !fileName.endsWith(".png") || !fileName.endsWith(".pdf")){
+            if(!fileName.endsWith(".jpg") && !fileName.endsWith(".png") && !fileName.endsWith(".pdf")){
                 System.out.println("Invalid File Type");
             }
         });

@@ -2,6 +2,7 @@ package com.companyaccounting.service;
 
 import com.companyaccounting.dto.CompanyRequest;
 import com.companyaccounting.dto.DepartmentRequest;
+import com.companyaccounting.entity.Company;
 import com.companyaccounting.entity.Owner;
 import com.companyaccounting.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +46,9 @@ public class OwnerPlanServiceImpl implements OwnerPlanService{
     }
 
     @Override
-    public List<Owner> findAllCompanies() {
+    public List<Company> findAllCompanies() {
 
-        return ownerRepository.findAll();
+        return companyRepository.findAll();
     }
 
     @Override
